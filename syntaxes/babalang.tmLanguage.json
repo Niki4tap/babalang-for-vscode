@@ -1,0 +1,150 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "babalang",
+	"patterns": [
+		{
+			"include": "#not"
+		},
+		{
+			"include": "#you"
+		},
+		{
+			"include": "#win"
+		},
+		{
+			"include": "#done"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#defeat"
+		},
+		{
+			"include": "#tiling"
+		},
+		{
+			"include": "#properties"
+		},
+		{
+			"include": "#characters"
+		},
+		{
+			"include": "#other"
+		},
+		{
+			"include": "#function"
+		},
+		{
+			"include": "#comment"
+		},
+		{
+			"include": "#prefix"
+		},
+		{
+			"include": "#condition"
+		}
+	],
+	"repository": {
+		"characters": {
+			"patterns": [{
+				"name": "constant",
+				"match": "\\b(([B|b][A|a][B|b][A|a])|([K|k][E|e][K|k][E|e])|([M|m][E|e])|([I|i][T|t])|([F|f][O|o][F|f][O|o])|([J|j][I|i][J|j][I|i]))\\b"
+			}]
+		},
+		"not": {
+			"patterns": [{
+				"name": "token.error-token",
+				"match": "\\b[N|n][O|o][T|t]\\b"
+			}]
+		},
+		"comment": {
+			"patterns": [{
+				"name": "markup.inserted",
+				"match": "//(.+)"
+			}]
+		},
+		"keywords": {
+			"patterns": [{
+				"name": "token.warn-token",
+				"match": "\\b(([I|i][S|s])|([M|m][I|i][M|m][I|i][C|c])|([A|a][N|n][D|d])|([H|h][A|a][S|s])|([M|m][A|a][K|k][E|e])|([F|f][E|e][A|a][R|r])|([F|f][O|o][L|l][L|l][O|o][W|w])|([E|e][A|a][T|t])|([P|p][O|o][W|w][E|e][R|r]))\\b"
+			}]
+		},
+		"you": {
+			"patterns": [{
+				"name": "brackethighlighter.unmatched",
+				"match": "\\b([Y|y][O|o][U|u])\\b"
+			}]
+		},
+		"win": {
+			"patterns": [{
+				"name": "punctuation.definition.list.begin.markdown",
+				"match": "\\b([W|w][I|i][N|n])\\b"
+			}]
+		},
+		"done": {
+			"patterns": [{
+				"name": "brackethighlighter.tag",
+				"match": "\\b([D|d][O|o][N|n][E|e])\\b"
+			}]
+		},
+		"defeat": {
+			"patterns": [{
+				"name": "token.error-token",
+				"match": "\\b(([D|d][E|e][F|f][E|e][A|a][T|t])|([I|i][M|m][A|a][G|g][E|e]))\\b"
+			}]
+		},
+		"tiling": {
+			"patterns": [{
+				"name": "support.constant",
+				"match": "\\b(([U|u][P|p])|([D|d][O|o][W|w][N|n])|([R|r][I|i][G|g][H|h][T|t])|([L|l][E|e][F|f][T|t]))\\b"
+			}]
+		},
+		"properties": {
+			"patterns": [{
+				"name": "markup.heading",
+				"match": "\\b(([M|m][O|o][V|v][E|e])|([F|f][A|a][L|l][L|l])|([T|t][U|u][R|r][N|n])|([M|m][O|o][R|r][E|e])|([C|c][H|h][I|i][L|l][L|l])|([Y|y][O|o][U|u]2)|([S|s][H|h][I|i][F|f][T|t])|([S|s][I|i][N|n][K|k])|([S|s][W|w][A|a][P|p])|([F|f][L|l][O|o][A|a][T|t])|([T|t][E|e][L|l][E|e])|([W|w][O|o][R|r][D|d])|([T|t][E|e][X|x][T|t]))\\b"
+			}]
+		},
+		"other": {
+			"patterns": [{
+				"name": "token.info-token",
+				"match": "\\b(([F|f][L|l][A|a][G|g])|([R|r][O|o][C|c][K|k])|([G|g][R|r][O|o][U|u][P|p])|([G|g][R|r][A|a][S|s][S|s])|([W|w][A|a][L|l][L|l])|([T|t][I|i][L|l][E|e])|([I|i][C|c][E|e])|([C|c][L|l][O|o][U|u][D|d])|([S|s][T|t][A|a][R|r])|([M|m][O|o][O|o][N|n])|([D|d][U|u][S|s][T|t])|([R|r][O|o][C|c][K|k][E|e][T|t])|([P|p][I|i][P|p][E|e])|([C|c][O|o][G|g])|([R|r][O|o][B|b][O|o][T|t])|([S|s][K|k][U|u][L|l][L|l])|([A|a][L|l][L|l])|([T|t][E|e][L|l][E|e])|([F|f][L|l][O|o][A|a][T|t])|([S|s][L|l][E|e][E|e][P|p]))\\b"
+			}]
+		},
+		"function": {
+			"patterns": [{
+				"name": "entity.name.function",
+				"match": "\\b(.+) ([I|i][S|s]) ([L|l][E|e][V|v][E|e][L|l])\\b",
+				"captures": {
+					"1": {
+						"name": "token.info-token"
+					}
+				}
+			},
+			{
+				"name": "entity.name.function",
+				"match": "\\b(.+) ([I|i][S|s]) ([D|d][O|o][N|n][E|e])\\b",
+				"captures": {
+					"1": {
+						"name": "token.info-token"
+					}
+				}
+			}
+			]
+		},
+		"prefix": {
+			"patterns": [{
+				"name": "invalid.illegal",
+				"match": "\\b(([L|l][O|o][N|n][E|e][L|l][Y|y])|([I|i][D|d][L|l][E|e])|([O|o][F|f][T|t][E|e][N|n])|([S|s][E|e][L|l][D|d][O|o][M|m]))\\b"
+			}]
+		},
+		"condition": {
+			"patterns": [{
+				"name": "token.debug-token",
+				"match": "\\b(([O|o][N|n])|([N|n][E|e][A|a][R|r])|([F|f][A|a][C|c][I|i][N|n][G|g])|([W|w][I|i][T|t][H|h][O|o][U|u][T|t]))\\b"
+			}]
+		}
+	},
+	"scopeName": "source.baba"
+}

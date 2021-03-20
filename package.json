@@ -1,0 +1,36 @@
+{
+    "name": "babalang",
+    "displayName": "Babalang",
+    "description": "Support for esolang based on baba is you indie game. Syntax highlighting looks better on Github Blue Theme.",
+    "version": "1.0.0",
+	"publisher": "Niki4tap",
+	"icon": "icon.png",
+    "engines": {
+        "vscode": "^1.54.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+	"galleryBanner": {
+		"color": "#FFFFFF",
+		"theme": "dark"
+	},
+	"keywords": [
+		"baba",
+		"baba is you",
+		"babalang",
+		"baba programming language"
+	],
+    "contributes": {
+        "languages": [{
+            "id": "babalang",
+            "aliases": ["babalang"],
+            "extensions": [".baba"]
+        }],
+        "grammars": [{
+            "language": "babalang",
+            "scopeName": "source.baba",
+            "path": "./syntaxes/babalang.tmLanguage.json"
+        }]
+    }
+}
